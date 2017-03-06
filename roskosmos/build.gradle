@@ -42,7 +42,7 @@ sourceSets {
     }
 }
 
-mainClassName = "com.github.mictaege.eval.gradle_variant.TowerControlAppKt"
+mainClassName = "com.github.mictaege.eval.gradle_composite.TowerControlAppKt"
 
 
 repositories {
