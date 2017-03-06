@@ -1,0 +1,3 @@
+rootProject.name = 'eval.gradle_composite.roskosmos'
+includeBuild '../main'
+

@@ -1,0 +1,64 @@
+group 'com.github.mictaege.eval'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.0.6'
+    ext.tornado_version = '1.5.8'
+    ext.fontawesomefx_version = '8.9'
+    ext.junit_version = '4.11'
+    ext.junit_gradle_plugin_version = '1.0.0-M2'
+    ext.hamkrest_version = '1.2.3.0'
+    ext.mockito_version = '2.2.11'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.junit.platform:junit-platform-gradle-plugin:$junit_gradle_plugin_version"
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'org.junit.platform.gradle.plugin'
+
+sourceSets {
+    main {
+        kotlin {
+            srcDir 'src/main/kotlin'
+        }
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+    test {
+        kotlin {
+            srcDir 'src/test/kotlin'
+        }
+        resources {
+            srcDir 'src/test/resources'
+        }
+    }
+}
+
+mainClassName = "com.github.mictaege.eval.gradle_variant.TowerControlAppKt"
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "no.tornado:tornadofx:$tornado_version"
+    compile "de.jensd:fontawesomefx:$fontawesomefx_version"
+    compile "com.github.mictaege.eval:eval.gradle_composite.main:1.0-SNAPSHOT"
+
+    testCompile "junit:junit:$junit_version"
+    testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+    testCompile "com.natpryce:hamkrest:$hamkrest_version"
+    testCompile "org.mockito:mockito-core:$mockito_version"
+    testCompile "com.github.mictaege.eval:eval.gradle_composite.main:1.0-SNAPSHOT"
+}
