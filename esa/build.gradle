@@ -62,3 +62,7 @@ dependencies {
     testCompile "org.mockito:mockito-core:$mockito_version"
     testCompile "com.github.mictaege.eval:eval.gradle_composite.main:1.0-SNAPSHOT"
 }
+
+task wrapper(type: Wrapper) {
+	gradleVersion = "3.4.1"
+}

@@ -60,3 +60,7 @@ dependencies {
     testCompile "com.natpryce:hamkrest:$hamkrest_version"
     testCompile "org.mockito:mockito-core:$mockito_version"
 }
+
+task wrapper(type: Wrapper) {
+	gradleVersion = "3.4.1"
+}
