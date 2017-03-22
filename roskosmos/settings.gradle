@@ -1,3 +1,5 @@
 rootProject.name = 'eval.gradle_composite.roskosmos'
-includeBuild '../main'
 
+if (file('../main').exists()) {
+	includeBuild '../main'
+}

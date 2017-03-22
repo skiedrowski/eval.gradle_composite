@@ -1,2 +1,5 @@
 rootProject.name = 'eval.gradle_composite.esa'
-includeBuild '../main'
+
+if (file('../main').exists()) {
+	includeBuild '../main'
+}
